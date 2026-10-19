@@ -27,3 +27,7 @@ Sessions restore from the HTTP-only cookie through `/api/user/profile`; no JWT/p
 Publish this folder as the separate frontend repository; keep `.env`, `node_modules` and `dist` out of Git. For another host, set `VITE_API_URL` at build time and match `FRONTEND_ORIGIN` on the API. The default cookie configuration is intended for localhost development or same-site HTTPS hosting.
 
 The starter's broken imports, route placeholders, context, auth guard and logout component were repaired in the existing files. The original CSS and index document are restored byte-for-byte. LibraryStyles supplies the existing library presentation. Remaining non-TODO repairs include broken imports/routing in App.jsx, session restoration around the UserProvider TODO, and the API helper in UserContext.jsx; instructor approval is needed for literal TODO-only compliance. Login and Logout explicitly permit modification in the supplied starter.
+
+## Final validation
+
+Compatible lockfile updates were applied without changing package.json. Frontend lint and production build passed afterward; npm audit reported zero vulnerabilities for the installed frontend tree. Published Git history was checked with Gitleaks and exact matching against saved credentials; no runtime credentials, plaintext test passwords, environment files, dependencies or dist output are tracked. Backend behavior passed 57 real Atlas checks including persistence after a process restart.
